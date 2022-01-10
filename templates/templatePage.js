@@ -19,6 +19,9 @@ export default function templatePage(site, page, comics) {
         ${styles(site)}
     </head>
         <body>
+            <header class="header">
+                <img src="${site.url}/assets/title.png"/>
+            </header>
             <main class="transition-fade">
                 <div class="page ${page.meta.title.toLowerCase()}">
                     ${page.content}

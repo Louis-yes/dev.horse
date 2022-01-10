@@ -50,7 +50,8 @@ function build(env){
     fs.copySync(`./content/js`, `${buildPath}/js`, {overwrite: true})
         // css
     fs.copySync(`./content/css`, `${buildPath}/css`, {overwrite: true})
-
+        // images
+    fs.copySync(`./content/assets`, `${buildPath}/assets`, {overwrite: true})
 }
 
 function getSiteInfo () {

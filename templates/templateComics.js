@@ -14,6 +14,10 @@ export default function(site, comic, comics){
         <script src="${site.url}/js/SwupScrollPlugin.min.js"></script>
     </head>
     <body>
+        <header class="header">
+            <img src="${site.url}/assets/title.png"/>
+        </header>
+
         ${comicDisplay(comic, comics, site)}
         ${navMenu(site)}
     </body>
