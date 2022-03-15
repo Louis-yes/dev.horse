@@ -1,8 +1,3 @@
-const options = {
-    containers: ["main"]
-  };
-const swup = new Swup(options);
-
 const rr = document.querySelector("#random")
 rr.addEventListener("mouseover", (e)=>{
   if(rr && window.comics && window.site){

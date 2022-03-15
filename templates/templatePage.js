@@ -1,4 +1,3 @@
-
 import meta from "../components/Meta.js"
 import styles from "../components/Styles.js"
 import navMenu from "../components/NavMenu.js"
@@ -13,14 +12,12 @@ export default function templatePage(site, page, comics) {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
-        <script src="${site.url}/js/swup.min.js"></script>  
-        <script src="${site.url}/js/SwupScrollPlugin.min.js"></script>
         ${meta({title: page.meta.title + " | " + site.title})}
         ${styles(site)}
     </head>
         <body>
             <header class="header">
-                <img src="${site.url}/assets/title.png"/>
+                <a href="${site.url}"><img src="${site.url}/assets/title.png"/></a>
             </header>
             <main class="transition-fade">
                 <div class="page ${page.meta.title.toLowerCase()}">

@@ -1,7 +1,7 @@
-function next(comic, comics, site){
+function next(comic, comics, site) {
     let i = comics.findIndex(cc => cc.date === comic.date)
-    if(i > 0){
-        let path = comics[i-1].path
+    if (i > 0) {
+        let path = comics[i - 1].path
         return `
         <a href="${site.url}/${path}" class="next">
             Next
@@ -14,10 +14,10 @@ function next(comic, comics, site){
     }
 }
 
-function previous(comic, comics, site){
+function previous(comic, comics, site) {
     let i = comics.findIndex(cc => cc.date === comic.date)
-    if(i < comics.length -1){
-        let path = comics[i+1].path
+    if (i < comics.length - 1) {
+        let path = comics[i + 1].path
         return `
         <a href="${site.url}/${path}" class="previous">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -30,18 +30,19 @@ function previous(comic, comics, site){
     }
 }
 
-export default function comicDisplay(comic, comics, site){
-    return  `
+function getAltText(comic) {
+    return `Panel 1: ${comic.data.panels[0].alt}. Text reads - ${comic.data.panels[0].text}. Panel 2: ${comic.data.panels[1].alt}. Text reads - ${comic.data.panels[1].text}`
+}
+
+export default function comicDisplay(comic, comics, site) {
+    return `
     <main class="main">
-        <div id="comic" class="comic">
-            ${comic.data.panels.map((p,i) => {
-                return `<img class=" transition-comic-panel-${i+1}" src="${site.url}/${comic.path}/${p.img}" alt="${p.alt}, the text reads ${p.text}" title="${p.hovertext}"/>` }
-            ).join("")}
-        </div>
-        <header class="comic-title transition-header">
+        <section id="comic" class="comic">
+            <img class="panel" width="600" height="600" src="${site.url}/${comic.path}/full_square.png" alt="${getAltText(comic)}" title="${comic.data.panels[0].hovertext}"/>
+        </section>
+        <header class="comic-title">
             "${comic.title}"
         </header>
-        
         <nav id="comic-nav" class="comic-nav" aria-label="comic navigation">
             ${previous(comic, comics, site)}
             ${next(comic, comics, site)}

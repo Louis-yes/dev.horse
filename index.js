@@ -119,10 +119,19 @@ function buildComicPages(site, comics, template) {
         let page = template(site, comic, comics)
         let path = `${buildPath}/${comic.path}`
         fs.copySync(`./content/posts/${comic.path}`, path, {overwrite: true})
+        makeInstagramFile(comic, path)
         fs.writeFile(path + "/index.html", page, () => { console.log(`created ${path}`) })
     });
 }
 
+function makeInstagramFile(comic, path){
+    let file = `
+${comic.data.panels[0].alt}. Text reads: "${comic.data.panels[0].text}"
+${comic.data.panels[1].alt}. Text reads: "${comic.data.panels[1].text}"
+Panel 1 - ${comic.data.panels[0].alt}. Text reads: "${comic.data.panels[0].text}". Panel 2 - ${comic.data.panels[1].alt}. Text reads: "${comic.data.panels[1].text}"
+    `.trim()
+    fs.writeFile(path + "/instagram.txt", file, () => { console.log(`created ${path}/instagram.txt`) })
+}
 function buildArchivePage(site, comics, template) {
     let page = template(site, comics)
     let path = `${buildPath}/archive`

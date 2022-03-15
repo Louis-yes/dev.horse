@@ -10,14 +10,8 @@ export default function(site, comic, comics){
     <head>
         ${meta({title: comic.title + " | " + site.title})}
         ${styles(site)}
-        <script src="${site.url}/js/swup.min.js"></script>  
-        <script src="${site.url}/js/SwupScrollPlugin.min.js"></script>
     </head>
     <body>
-        <header class="header">
-            <img src="${site.url}/assets/title.png"/>
-        </header>
-
         ${comicDisplay(comic, comics, site)}
         ${navMenu(site)}
     </body>

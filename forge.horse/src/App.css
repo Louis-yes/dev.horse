@@ -1,0 +1,38 @@
+.app {
+  display: grid;
+  grid-template-columns: 600px 1fr;
+  align-items: stretch;
+  /* flex-direction: row; */
+}
+
+.workspace, .canvas {
+  /* height: 300px; */
+  /* border: 1px solid tomato; */
+}
+
+.canvas {
+  width: 600px;
+}
+
+canvas {
+  position: absolute;
+  width: 1080px;
+  height: 1080px;
+  transform-origin: top left;
+  transform: scale(0.55555556);
+}
+
+canvas:nth-child(2){
+  top: 600px;
+}
+
+canvas:nth-child(3){
+  top: 1200px;
+}
+
+.workspace {
+  position: fixed;
+  width: calc(100% - 650px);
+  right: 0;
+  padding: 20px 20px 20px 50px;
+}
