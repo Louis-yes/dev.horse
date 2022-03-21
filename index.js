@@ -126,8 +126,8 @@ function buildComicPages(site, comics, template) {
 
 function makeInstagramFile(comic, path){
     let file = `
-${comic.data.panels[0].alt}. Text reads: "${comic.data.panels[0].text}"
-${comic.data.panels[1].alt}. Text reads: "${comic.data.panels[1].text}"
+${comic.data.panels[0].alt}. Text reads: "${comic.data.panels[0].text.replace("\n", "")}"
+${comic.data.panels[1].alt}. Text reads: "${comic.data.panels[1].text.replace("\n", "")}"
 Panel 1 - ${comic.data.panels[0].alt}. Text reads: "${comic.data.panels[0].text}". Panel 2 - ${comic.data.panels[1].alt}. Text reads: "${comic.data.panels[1].text}"
     `.trim()
     fs.writeFile(path + "/instagram.txt", file, () => { console.log(`created ${path}/instagram.txt`) })
