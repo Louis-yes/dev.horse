@@ -1,4 +1,4 @@
-export default {
+const comic = {
         "date": "2022-03-15",
         "title": "Metaphors are such a good way to express yourself",
         "path": "themire",
@@ -41,3 +41,4 @@ export default {
             }
         ]
     }
+export default comic

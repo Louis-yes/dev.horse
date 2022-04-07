@@ -1,6 +1,6 @@
 import './App.css';
 import Canvas from './Canvas';
-import React, { useState } from 'react';
+import React from 'react';
 import Editor from "@monaco-editor/react";
 import placeHolderComic from './placeHolderComic';
 
@@ -23,14 +23,9 @@ class App extends React.Component {
 
     handleEditorDidMount = (editor, monaco) => {
       // here is the editor instance
-      // you can store it in `useRef` for further usage
-      window.eee = editor
-      editor.onDidChangeCursorSelection((e)=>{
-        console.log()
-      })
-
-      editor.setValue(JSON.stringify(this.state.comic, null, '\t'))
-      editor.updateOptions({wordWrap: "on", minimap: { enabled: false }})
+      window.eee = editor;
+      editor.setValue(JSON.stringify(this.state.comic, null, '\t'));
+      editor.updateOptions({wordWrap: "on", minimap: { enabled: false }});
     }
 
     render(){

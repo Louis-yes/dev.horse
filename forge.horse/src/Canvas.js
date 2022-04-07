@@ -26,16 +26,16 @@ const Canvas = props => {
 
 
     useEffect(() => {
-        const canvas = canvasRef.current
-        const context = canvas.getContext('2d')
-        if(!img){
+        const canvas = canvasRef.current;
+        const context = canvas.getContext('2d');
+        if (!img) {
             img = new Image();
             img.onload = () => {draw(context, img)};
             img.src = src;
         } else {
             draw(context, img)
         }
-    }, [draw])
+    }, [draw]);
 
     return <canvas width = "1080"
     height = "1080"
