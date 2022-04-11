@@ -1,8 +1,10 @@
+const date = new Date()
+console.log(date.getDay())
 const comic = {
-        "date": "2022-03-15",
-        "title": "Metaphors are such a good way to express yourself",
-        "path": "themire",
-        "desc": "You know how it feels",
+        "date": date.getFullYear() + "-" + (date.getMonth() + 1).toString().padStart(2,"0") + "-" + date.getDate().toString().padStart(2,"0"),
+        "title": "",
+        "path": "",
+        "desc": "",
         "data": {
             "panels": [
                 {
