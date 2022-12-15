@@ -1,5 +1,5 @@
 # Everyday a cowboy rides out in the morning and returns in the evening.
-![](image/../images/full.png
+![](image/../images/full.png)
 
 This repo contains the pieces I use to create [return.horse](https://www.return.horse). They're pulled together by a third component, currently living on my hard-drive, called forge.horse.
 
